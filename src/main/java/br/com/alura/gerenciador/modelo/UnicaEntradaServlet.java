@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.com.alura.gerenciador.acao.ListaEmpresas;
+
 
 @WebServlet("/entrada")
 public class UnicaEntradaServlet extends HttpServlet {
@@ -19,6 +21,10 @@ public class UnicaEntradaServlet extends HttpServlet {
 
         if(paramAcao.equals("ListaEmpresas")) {
             System.out.println("listando empresas");
+            ListaEmpresas acao = new ListaEmpresas();
+            acao.executa(request, response);
+            
+            
           } else if(paramAcao.equals("RemoveEmpresa")) {
             System.out.println("removendo empresa");
          } else if(paramAcao.equals("MostraEmpresa")) {
